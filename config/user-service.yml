@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: user-service
+
+server:
+  port: 8081
+
+  config:
+    import: "optional:configserver:http://localhost:8888"
+    datasource:
+      url: jdbc:mysql://localhost:3306/userdb
+      username: root
+      password: Rathod@9586
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
