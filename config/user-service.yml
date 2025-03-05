@@ -1,7 +1,8 @@
 spring:
   application:
     name: user-service
-
+example:
+  property: value
 server:
   port: 8081
 
